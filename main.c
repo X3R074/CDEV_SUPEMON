@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAILLE_NOM 60
+#define TAILLE_NOM 10
 
 // Déclaration de la structure joueur
-typedef struct {
+typedef struct { //struct joueur initialisée dans entity.h
     char nom[TAILLE_NOM];
 } Joueur;
 
-char choix; // Déclaration globale de la variable choix
+char choix; // Déclaration globale de la variable choix //pas de déclaration globale !! INTERDIT
 
 // Fonction pour créer un nouveau joueur
 Joueur créer_Nouveau_Joueur() {
     Joueur joueur;
     printf("Entrez le nom du joueur : ");
-    scanf("%s", joueur.nom);  
+    scanf("%s", joueur.nom);  //a fix avec le reste pas opti 
     return joueur;
 }
 
@@ -48,7 +48,7 @@ void afficher_menu_supemon(Joueur joueur) {
             printf("Vous avez choisi Supirtle !\n");
             break;
         default:
-            printf("Choix invalide, veuillez relancer le jeu.\n");
+            printf("Choix invalide, veuillez relancer le jeu.\n"); //on va faire une boucle pour recommencer tant que choix invalide
             break;
     }
 }
@@ -71,7 +71,7 @@ void afficher_menu_destination() {
     // Traitement du choix
     switch (choix_utilisateur) {
         case '1':
-            printf("Vous partez à l'aventure dans la nature !\n");
+            printf("Vous partez à l'aventure dans la nature !\n"); //pas forccement obligé de confirmer pour chaque 
             break;
         case '2':
             printf("Vous entrez dans la boutique.\n");
@@ -90,7 +90,7 @@ void afficher_menu_destination() {
 
 // Fonction pour afficher le combat Supémon
 void afficher_combat_supemon(Joueur joueur) {
-    // Affichage des statistiques du combat
+    // Affichage des statistiques du combat // pas d'afficxhage de stats à part les HP et doit être dynamique :/
     printf("Votre tour...\n\n");
     
     printf("%c (ennemi)\n", choix);
@@ -118,18 +118,18 @@ void afficher_combat_supemon(Joueur joueur) {
     
     char choix_action;
     printf("1, 2, 3, 4 ou 5 : ");
-    scanf(" %c", &choix_action);
+    scanf(" %c", &choix_action); // %d pour un int le c ne sert a rien 
     
-    // Menu des attaques si l'utilisateur choisit 1
+    // Menu des attaques si l'utilisateur choisit 1 //les actions doivent être dynamique en fonction de ce qu'a le pokemon 
     if (choix_action == '1') {
         printf("\n1 - Scratch\n");
         printf("2 - Grawl\n");
         printf("3 - Annuler\n");
-        char choix_attaque;
+        char choix_attaque; // ne peut pas être un char (pas opti)
         printf("1, 2 ou 3 : ");
         scanf(" %c", &choix_attaque);
 
-        switch (choix_attaque) {
+        switch (choix_attaque) {//duu coup doit être dynamique et ""Supemon" utilise "attaque""
             case '1':
                 printf("Vous avez utilisé Scratch !\n");
                 break;
@@ -149,7 +149,7 @@ void afficher_combat_supemon(Joueur joueur) {
 }
 
 int main() {
-    // Appel de la fonction pour créer un nouveau joueur
+    // Appel de la fonction pour créer un nouveau joueur //a ajouter charger ou sauvegrader avant 
     Joueur joueur = créer_Nouveau_Joueur();
 
     // Appel de la fonction pour afficher le menu Supemon
