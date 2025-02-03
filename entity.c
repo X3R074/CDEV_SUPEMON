@@ -4,6 +4,12 @@
 
 
 
+void entity (){
+struct Supemon S1;
+//gwen
+}
+
+
 
 
 
