@@ -1,9 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-typedef struct 
+typedef struct  
 {
-    int id;
     char name[10];
     int level;
     int experience;
@@ -25,11 +24,28 @@ typedef struct
 typedef struct 
 {
     char name [10];
-    int Supemon [6];
-    int cur_Supemon;
+    Supemon supemonList[6];
+    int curSupemon;
     int Supcoins;
-    //pointeur dynamique sur une liste d'objets
+    Objects objectList [3];
 } Player;
+
+
+typedef struct {
+    char name [15];
+    int cost;
+    int power;
+    int effect; //1 vie 2 experience ?
+    int number;
+} Objects;
+
+
+typedef struct {
+    char name [10];
+    int target; //1 me 2 enemy
+    int howMuch;
+    int effect; //1 damage, 2 attaque, 3 defense, 4 evasion, 5 accuracy, 6 HP; 
+} capacities;
 
 
 
