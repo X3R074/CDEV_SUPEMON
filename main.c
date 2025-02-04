@@ -34,17 +34,17 @@ void afficher_menu_supemon(Joueur joueur) {
 
     // Saisie de l'utilisateur
     printf("1, 2 ou 3 : ");
-    scanf(" %c", &choix);
+    scanf(" %d", &choix);
 
     // Vérification du choix
     switch (choix) {
-        case '1':
+        case 1:
             printf("Vous avez choisi Supmander !\n");
             break;
-        case '2':
+        case 2:
             printf("Vous avez choisi Supasaur !\n");
             break;
-        case '3':
+        case 3:
             printf("Vous avez choisi Supirtle !\n");
             break;
         default:
@@ -66,20 +66,20 @@ void afficher_menu_destination() {
     // Saisie utilisateur
     char choix_utilisateur;
     printf("1, 2, 3 ou 4 : ");
-    scanf(" %c", &choix_utilisateur);
+    scanf(" %d", &choix_utilisateur);
 
     // Traitement du choix
     switch (choix_utilisateur) {
-        case '1':
+        case 1:
             printf("Vous partez à l'aventure dans la nature !\n"); //pas forccement obligé de confirmer pour chaque 
             break;
-        case '2':
+        case 2:
             printf("Vous entrez dans la boutique.\n");
             break;
-        case '3':
+        case 3:
             printf("Vous allez au Centre Supémon.\n");
             break;
-        case '4':
+        case 4:
             printf("Vous quittez le jeu. À bientôt !\n");
             break;
         default:
@@ -93,14 +93,14 @@ void afficher_combat_supemon(Joueur joueur) {
     // Affichage des statistiques du combat // pas d'afficxhage de stats à part les HP et doit être dynamique :/
     printf("Votre tour...\n\n");
     
-    printf("%c (ennemi)\n", choix);
+    printf("%d (ennemi)\n", choix);
     printf("----------------------------\n");
     printf("HP: 10/10     Lvl: 1\n");
     printf("Atk: 1        Def: 1\n");
     printf("Acc: 2        Eva: 1\n");
     printf("----------------------------\n");
     
-    printf("%c (%s)\n", choix, joueur.nom);
+    printf("%d (%s)\n", choix, joueur.nom);
     printf("HP: 10/10     Lvl: 1\n");
     printf("Atk: 1        Def: 1\n");
     printf("Acc: 2        Eva: 1\n");
@@ -118,10 +118,10 @@ void afficher_combat_supemon(Joueur joueur) {
     
     char choix_action;
     printf("1, 2, 3, 4 ou 5 : ");
-    scanf(" %c", &choix_action); // %d pour un int le c ne sert a rien 
+    scanf(" %d", &choix_action); // %d pour un int le c ne sert a rien 
     
     // Menu des attaques si l'utilisateur choisit 1 //les actions doivent être dynamique en fonction de ce qu'a le pokemon 
-    if (choix_action == '1') {
+    if (choix_action == 1) {
         printf("\n1 - Scratch\n");
         printf("2 - Grawl\n");
         printf("3 - Annuler\n");
@@ -130,13 +130,13 @@ void afficher_combat_supemon(Joueur joueur) {
         scanf(" %c", &choix_attaque);
 
         switch (choix_attaque) {//duu coup doit être dynamique et ""Supemon" utilise "attaque""
-            case '1':
+            case 1:
                 printf("Vous avez utilisé Scratch !\n");
                 break;
-            case '2':
+            case 2:
                 printf("Vous avez utilisé Grawl !\n");
                 break;
-            case '3':
+            case 3:
                 printf("Retour au menu principal.\n");
                 break;
             default:
@@ -144,7 +144,7 @@ void afficher_combat_supemon(Joueur joueur) {
                 break;
         }
     } else {
-        printf("Action choisie : %c\n", choix_action);
+        printf("Action choisie : %d\n", choix_action);
     }
 }
 
