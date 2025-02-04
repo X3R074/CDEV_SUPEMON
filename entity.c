@@ -19,7 +19,8 @@ Supemon Supedex[3] = {{
     .evs_base = 1,
     .acy = 2,
     .acy_base = 2,
-    .speed = 1},
+    .speed = 1,
+    .selfCapa = {ctList[1], ctList[2]}}, /* A FIX STP*/
     {
     .name = "Supasaur",
     .level = 1,
@@ -52,6 +53,78 @@ Supemon Supedex[3] = {{
     .speed=2
     }
     };
+
+
+Objects BookOfObject [3] = {{
+    .name = "Potion",
+    .cost = 100,
+    .power = 5,
+    .effect = 1,
+    .number = 1,
+}
+,
+{
+    .name = "Super Potion",
+    .cost = 300,
+    .power = 10,
+    .effect = 1,
+    .number = 1
+}
+,
+{
+    .name = "Rare candy",
+    .cost = 700,
+    .power = 1,//niveau ++
+    .effect= 2,
+    .number = 1
+}
+};
+
+Player user = {
+    .name = NULL,
+    .supemonList = {},
+    .curSupemon = 1,
+    .Supcoins = 0,
+    .objectList = {}
+
+};
+
+capacities ctList [5] = {
+    {
+        .name = "Scratch",
+        .target = 2,
+        .howMuch= 3,
+        .effect = 1
+    },
+    {
+        .name = "grawl",
+        .target = 1,
+        .howMuch = 1,
+        .effect = 2
+    },
+    {
+        .name = "Pound",
+        .target = 2,
+        .howMuch = 2,
+        .effect = 1
+    },
+    {
+        .name = "Foliage",
+        .target = 1,
+        .howMuch = 1,
+        .effect = 4
+    },
+    {
+        .name = "shell",
+        .target = 1,
+        .howMuch = 1,
+        .effect = 3
+    }
+
+
+};
+
+
 //gwen
 
 

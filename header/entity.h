@@ -32,12 +32,20 @@ typedef struct
 
 
 typedef struct {
-    char name [10];
+    char name [15];
     int cost;
     int power;
     int effect; //1 vie 2 experience ?
     int number;
 } Objects;
+
+
+typedef struct {
+    char name [10];
+    int target; //1 me 2 enemy
+    int howMuch;
+    int effect; //1 damage, 2 attaque, 3 defense, 4 evasion, 5 accuracy, 6 HP; 
+} capacities;
 
 
 
