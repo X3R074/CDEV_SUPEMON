@@ -17,7 +17,7 @@ typedef struct
     int acy;
     int acy_base;
     int speed;
-    //list of move
+    capacities selfCapa [4];
 } Supemon;
 
 

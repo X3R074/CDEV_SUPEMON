@@ -20,7 +20,7 @@ Supemon Supedex[3] = {{
     .acy = 2,
     .acy_base = 2,
     .speed = 1,
-    .selfCapa = {ctList[1], ctList[2]}}, /* A FIX STP*/
+    .selfCapa = {}}, /* A FIX VITE*/
     {
     .name = "Supasaur",
     .level = 1,
