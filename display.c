@@ -89,9 +89,10 @@ int DisplayAdventure() {
 }
 
 
-// Fonction pour afficher le combat Supémon
+
+// COMBATS
 void displayCombatStats() {
-    // Affichage des statistiques du combat // pas d'afficxhage de stats à part les HP et doit être dynamique :/
+
     printf("Your turn...\n\n");
     
     printf("%s (enemy)\n", );
@@ -124,7 +125,7 @@ int DispalyActionsCombat() {
     printf("|  4 - Capture                  |\n");
     printf("|  5 - Run away                 |\n");
     printf("+-------------------------------+\n");
-    printf("\n1, 2, 3, 4 ou 5 : ");
+    printf("\n1, 2, 3, 4 or 5 : ");
     scanf(" %d", &choice);  
 
     switch (choice){
@@ -157,8 +158,8 @@ int MoveCombat (){
     // Menu des attaques si l'utilisateur choisit 1 //les actions doivent être dynamique en fonction de ce qu'a le pokemon 
         printf("\n1 - %s\n");
         printf("2 - %s\n");
-        printf("3 - Annuler\n");
-        printf("\n1, 2 ou 3 : ");
+        printf("3 - Cancel\n");
+        printf("\n1, 2 or 3 : ");
         scanf(" %c", &choice);
 
         switch (choice) {//duu coup doit être dynamique et ""Supemon" utilise "attaque""
@@ -177,4 +178,105 @@ int MoveCombat (){
         }
     
     } while (choice ==0);
+}
+
+
+
+
+
+
+
+// SHOP
+int ShopInterface () {
+    int choice =0;
+    do
+    {
+    
+    printf("+-------------------------------+\n");
+    printf("| Welcome to the Supéshop       |\n");
+    printf("| What will you do?             |\n");
+    printf("|  1 - Buy                      |\n");
+    printf("|  2 - Sell                     |\n");
+    printf("|  3 - Return to the game       |\n");
+    printf("+-------------------------------+\n");
+    printf("\n1, 2 or 3: ");
+    scanf(" %d", &choice);  
+    switch (choice){
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    default:
+        choice = 0;
+        printf("Please enter a valid number\n");
+    }
+    } while (choice == 0);
+}
+
+// SUPEMON CENTER
+
+int SupemonCenterInterface() {
+    int choice =0;
+    
+    printf("+-------------------------------------+\n");
+    printf("| Welcome to the Supémon Center       |\n");
+    printf("|  1 - %s                    HP: %d/%d|\n");
+    printf("|  2 - %s                    HP: %d/%d|\n");
+    printf("|  3 - %s                    HP: %d/%d|\n");
+    printf("|  4 - %s                    HP: %d/%d|\n");
+    printf("|  5 - %s                    HP: %d/%d|\n");
+    printf("|  6 - %s                    HP: %d/%d|\n");
+    printf("|  Do you want to heal your Supémon ? |\n");
+    printf("+-------------------------------------+\n");
+    printf("\n yes(1) or no(0): ");
+    scanf(" %d", &choice);  
+    if (choice == 1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+
+// LEAVE THE GAME
+
+
+int LeaveGame() {
+
+    int choice=0;
+
+    do
+    {
+    
+    printf("+-------------------------------+\n");
+    printf("| What will you do?             |\n");
+    printf("|  1 - Leave and save           |\n");
+    printf("|  2 - Leave without saving     |\n");
+    printf("|  3 - Return to the game       |\n");
+    printf("+-------------------------------+\n");
+    printf("\n1, 2, or 3: ");
+    scanf(" %d", &choice);  
+    switch (choice){
+    case 1:
+        printf("Game will be saved and exited.\n");
+        return 1;
+        break;
+    case 2:
+        printf("Game will be exited without saving.\n");
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    default:
+        choice = 0;
+        printf("Please enter a valid number\n");
+    }
+    } while (choice == 0);
 }
