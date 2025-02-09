@@ -33,7 +33,7 @@ typedef struct
 {
     char name [10];
     Supemon supemonList[6];
-    int curSupemon;
+    Supemon curSupemon;
     int Supcoins;
     Objects objectList [3];
 } Player;

@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "header/entity.h"
+#include "header/display.h"
+
+
 extern Player mainUser;
 extern Supemon Supedex;
 
@@ -95,17 +98,17 @@ void displayCombatStats() {
 
     printf("Your turn...\n\n");
     
-    printf("%s (enemy)\n", );
+    printf("%s (enemy)\n", Supedex.name);//pas sur de ce que je dois mettre ici
     printf("----------------------------\n");
     printf("HP: %d/%d     Lvl: %d\n");
     printf("Atk: %d        Def: %d\n");
     printf("Acc: %d        Eva: %d\n");
     printf("----------------------------\n");
     
-    printf("%s (%s)\n", , mainUser.name);
-    printf("HP: %d/%d     Lvl: %d\n");
-    printf("Atk: %d        Def: %d\n");
-    printf("Acc: %d       Eva: %d\n");
+    printf("%s (%s)\n", mainUser.curSupemon.name, mainUser.name);
+    printf("HP: %d/%d     Lvl: %d\n", mainUser.curSupemon.HP, mainUser.curSupemon.HP_max, mainUser.curSupemon.level);
+    printf("Atk: %d        Def: %d\n", mainUser.curSupemon.atk, mainUser.curSupemon.def);
+    printf("Acc: %d       Eva: %d\n", mainUser.curSupemon.acy, mainUser.curSupemon.evs);
     printf("----------------------------\n\n");}
 
 
@@ -180,11 +183,156 @@ int MoveCombat (){
     } while (choice ==0);
 }
 
+// change supemon 
+int changeSupemon (){
+    int choice =0;
+
+    do
+    {
+    printf("+-----------------------------------+\n");
+    printf("| Your current Supémon is %s        |\n");
+    printf("| Which Supémon do you want to use? |\n");
+    printf("|  1 - %s                           |\n");
+    printf("|  2 - %s                           |\n");
+    printf("|  3 - %s                           |\n");
+    printf("|  4 - %s                           |\n");
+    printf("|  5 - %s                           |\n");
+    printf("|  6 - %s                           |\n");
+    printf("|  0 - Cancel                       |\n");
+    printf("+-----------------------------------+\n");
+    printf("\n1, 2, 3, 4, 5, 6 or 0: ");
+    scanf(" %d", &choice);
+
+    switch (choice)
+   {
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    case 4:
+        return 4;
+        break;
+    case 5:
+        return 5;
+        break;
+    case 6:
+        return 6;
+        break;
+    case 0:
+        return 0;
+        break;
+    default:
+        choice = 0;
+        printf("Please enter a valid number\n");
+    }
+    } while (choice == 0);
+   
+
+}
+
+//use item
+int ItemUse () {
+    int choice =0;
+
+    
+    printf("+-----------------------------------+\n");
+    printf("| Which object do you want to use?  |\n");
+    printf("|  1 - Potion                       |\n");
+    printf("|  2 - Super Potion                 |\n");
+    printf("|  0 - Cancel                       |\n");
+    printf("+-----------------------------------+\n");
+    printf("\n1 or 0: ");
+    scanf(" %d", &choice);
+    if (choice == 1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+    
+}
+
+//capture 
+int Capture () {
+    int choice =0;
+
+    
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("| You are trying to capture the Supémon|\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n");
+    printf("\n1 or 0: ");
+    scanf(" %d", &choice);
+    if (choice == 1) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+    
+}
+
+
+
+// capture success
+int CaptureSuccess () {
+    
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("| This Supémon is your new bestfriend  |\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n");
+}
+//caputre fail 
+int CaptureFail () {
+    
+    printf("+-----------------------------------------------+\n");
+    printf("|                                               |\n");
+    printf("| Oh no, the supémon doesn't want to be yours   |\n");
+    printf("|                                               |\n");
+    printf("+-----------------------------------------------+\n");
+}
 
 
 
 
+// run away
 
+int RunAway () {
+    
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("| You are trying to run away           |\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n");
+}
+
+
+//run away success
+int RunAwaySuccess () {
+    
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("| Ooof we are safe                     |\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n");
+}
+
+//run away fail
+int RunAwayFail () {
+    
+    printf("+--------------------------------------------------+\n");
+    printf("|                                                  |\n");
+    printf("| Your enemy doens't want you to flee              |\n");
+    printf("|                                                  |\n");
+    printf("+--------------------------------------------------+\n");
+}
 
 // SHOP
 int ShopInterface () {
@@ -258,7 +406,7 @@ int LeaveGame() {
     printf("| What will you do?             |\n");
     printf("|  1 - Leave and save           |\n");
     printf("|  2 - Leave without saving     |\n");
-    printf("|  3 - Return to the game       |\n");
+    printf("|  3 - Rurn to theet game       |\n");
     printf("+-------------------------------+\n");
     printf("\n1, 2, or 3: ");
     scanf(" %d", &choice);  

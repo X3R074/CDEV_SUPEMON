@@ -8,9 +8,6 @@
 
 
 // Déclaration de la structure joueur
-typedef struct { //struct joueur initialisée dans entity.h
-    char nom[TAILLE_NOM];
-} Joueur;
 
 
 
