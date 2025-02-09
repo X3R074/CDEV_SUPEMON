@@ -119,9 +119,10 @@ Player mainUser = {
     .supemonList = {{0}},
     .curSupemon = {0},
     .Supcoins = 0,
-    .objectList = {{0}}
-
+    .objectList = {{1}}
 };
+
+
 
 
 

@@ -12,14 +12,14 @@
 
 
 // Fonction pour créer un nouveau joueur
-Joueur créer_Nouveau_Joueur() {
+/*Joueur créer_Nouveau_Joueur() {
     Joueur joueur;
     printf("Entrez le nom du joueur : ");
     scanf("%s", joueur.nom);  //a fix avec le reste pas opti 
     return joueur;
 }
 
-
+*/
 
 int main() {
 

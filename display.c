@@ -366,6 +366,63 @@ int ShopInterface () {
     } while (choice == 0);
 }
 
+int buyingInterface() {
+    int choice =0;
+    
+    printf("+--------------------------------+\n");
+    printf("| What will you buy?             |\n");
+    printf("|  1 - Buy a Potion              |\n");
+    printf("|  2 - Buy a Super Potion        |\n");
+    printf("|  3 - Buy a Rare Candy          |\n");
+    printf("|  0 or else to quit             |\n");
+    printf("+--------------------------------+\n");
+    printf("\n1, 2 or 3: ");
+    scanf(" %d", &choice);  
+    switch (choice){
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    default:
+        return 0;
+
+    }
+}
+
+int sellingInterface() {
+    int choice =0;
+    
+    printf("+--------------------------------+\n");
+    printf("| Your inventory :               |\n");
+    printf("| 1.Potion               %d items|\n");
+    printf("| 2.Super Potion         %d items|\n");
+    printf("| 3.Rare Candy           %d items|\n");
+    printf("|  What do you want to sell      |\n");
+    printf("|  1, 2 or 3 (0 or else to quit) |\n");
+    printf("+--------------------------------+\n");
+    printf("\n1, 2 or 3: ");
+    scanf(" %d", &choice);  
+    switch (choice){
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    default:
+        return 0;
+
+    }
+}
+
 // SUPEMON CENTER
 
 int SupemonCenterInterface() {
