@@ -1,7 +1,7 @@
-#include "header/entity.h"
+
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "header/entity.h"
 
 
 
@@ -80,14 +80,15 @@ Objects BookOfObject [3] = {{
 }
 };
 
-Player user = {
-    .name = NULL,
-    .supemonList = {},
+Player mainUser = {
+    .name = "",
+    .supemonList = {{0}},
     .curSupemon = 1,
     .Supcoins = 0,
-    .objectList = {}
+    .objectList = {{0}}
 
 };
+
 
 capacities ctList [5] = {
     {
