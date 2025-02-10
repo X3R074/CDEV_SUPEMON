@@ -5,8 +5,7 @@
 #include "header/entity.h"
 #include "header/feature.h"
 
-extern Player mainUser;
-extern Supemon Supedex;
+
 
 // Déclaration de la structure joueur
 

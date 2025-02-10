@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include "header/entity.h"
 
+void initJoueur (Player mainUser){
+
 /*capacities ctList [5] = {
     {
         .name = "Scratch",
@@ -143,3 +145,4 @@ Player mainUser = {
 
 
 
+}

@@ -5,16 +5,16 @@
 #include <time.h>
 #include <math.h>
 
-extern Player mainUser;
-extern Supemon Supedex;
+//extern Player mainUser;
+//extern Supemon Supedex;
 
 
-void initJoueur (){
+void initJoueur (Player mainUser){
 printf("Enter your name : ");  
 scanf("%s", &mainUser.name);
 }
 
-void Save (){
+void Save (Player mainUser){
     FILE *file = NULL;
     file = fopen("save.txt", "wb");
     if (Save != NULL)
@@ -29,7 +29,7 @@ void Save (){
 }
 
 
-void Load (){
+void Load (Player mainUser){
     FILE *file = NULL;
     file = fopen("save.txt", "rb");
     if (file != NULL)
@@ -46,7 +46,7 @@ void Load (){
 
 
 
-void Heal (quantityHp, i){
+void Heal (int quantityHp, int i, Player mainUser){
     mainUser.supemonList[i].HP += quantityHp;
     if (mainUser.supemonList[i].HP > mainUser.supemonList[i].HP_max)
     {
@@ -57,7 +57,7 @@ void Heal (quantityHp, i){
 }
 
 // shop 
-void Buy (itemSelected){
+void Buy (int itemSelected, Player mainUser){
     if (mainUser.Supcoins >= mainUser.objectList[itemSelected].cost)
     {
         mainUser.objectList[itemSelected].number += 1;
@@ -71,7 +71,7 @@ void Buy (itemSelected){
 }
 
 //sell an object 
-void Sell (itemSelected){
+void Sell (int itemSelected, Player mainUser){
     if (mainUser.objectList[itemSelected].number > 0)
     {
         mainUser.objectList[itemSelected].number -= 1;
@@ -92,14 +92,14 @@ void RandomSupémon (Supemon Supedex[]){
     Supemon Enemy = Supedex[random];
 }
 
-void SupemonCenter (){
+void SupemonCenter (Player mainUser){
     for (int i = 0; i < 6; i++)
     {
-        Heal (mainUser.supemonList[i].HP_max,i);
+        Heal (mainUser.supemonList[i].HP_max,i, mainUser);
     };
 }
 
-void LevelUp (){
+void LevelUp (Player mainUser){
     Supemon currentSupemon = mainUser.supemonList[mainUser.curSupemon];
     if (currentSupemon.level ==1){ // réparer en focntion des consignes
         if (currentSupemon.experience >= 500)
