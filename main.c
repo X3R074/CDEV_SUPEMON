@@ -22,9 +22,10 @@
 */
 
 int main() {
+    Player mainUser;
     int rep = DisplayMainTitle();
     if (rep == 1 ) {
-        initJoueur();
+        initJoueur(Player *mainUser);
         int Supchoice = DisplayStarter();
         if (Supchoice == 1) {
             mainUser.supemonList[0] = Supedex[0]; //gérer comment on ajoute un supemon

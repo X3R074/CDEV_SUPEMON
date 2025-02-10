@@ -1,22 +1,25 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-int DisplayMainMenu();
-int DisplayStarter();
+int DisplayMainTitle();
+int DisplayStarter(Player *mainUser);
 int DisplayAdventure();
-int DisplayCombatStats();
-int DisplayActionsCombat();
-int Movecombat();
-int ChangeSupemon();
-int Itemuse();
+void displayCombatStats(Player *mainUser, Supemon *Supedex);
+int DispalyActionsCombat();
+int MoveCombat (Supemon *Supedex);
+int changeSupemon (Player *mainUser);
+int ItemUse ();
 int Capture();
 int CaptureSuccess();
 int CaptureFail();
 int RunAway();
 int RunAwaySuccess();
 int RunAwayFail();
+int Loose();
 int ShopInterface();
-int SupemonCenterInterface();
+int buyingInterface();
+int sellingInterface( Player *mainUser);
+int SupemonCenterInterface(Player *mainUser);
 int LeaveGame();
 
 

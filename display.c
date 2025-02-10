@@ -4,8 +4,7 @@
 #include "header/display.h"
 
 
-//extern Player mainUser;
-//extern Supemon Supedex;
+
 
 int DisplayMainTitle (){
     int choice =0;
@@ -40,9 +39,9 @@ int DisplayMainTitle (){
 
 
 
-int DisplayStarter(Player mainUser) {
+int DisplayStarter(Player *mainUser) {
     int choice=0;
-    printf("Hello %s\n", mainUser.name);
+    printf("Hello %s\n", mainUser->name);
     printf("Welcome in Supemon World !\n\n");
 do
 {
@@ -127,20 +126,20 @@ int DisplayAdventure() {
 
 
 // COMBATS
-void displayCombatStats(Player mainUser, Supemon Supedex) {
+void displayCombatStats(Player *mainUser, Supemon *Supedex) {
 
     printf("Your turn...\n\n");
     
-    printf("%s (enemy)\n", Supedex.name);//pas sur de ce que je dois mettre ici
+    printf("%s (enemy)\n", Supedex->name);//pas sur de ce que je dois mettre ici
     printf("----------------------------\n");
     printf("HP: %d/%d     Lvl: %d\n");
     printf("Atk: %d        Def: %d\n");
     printf("Acc: %d        Eva: %d\n");
     printf("----------------------------\n");
 
-    Supemon currentSupemon = mainUser.supemonList[mainUser.curSupemon];
+    Supemon currentSupemon = mainUser->supemonList[mainUser->curSupemon];
     
-    printf("%s (%s)\n", currentSupemon.name, mainUser.name);
+    printf("%s (%s)\n", currentSupemon.name, mainUser->name);
     printf("HP: %d/%d     Lvl: %d\n", currentSupemon.HP, currentSupemon.HP_max, currentSupemon.level);
     printf("Atk: %d        Def: %d\n", currentSupemon.atk, currentSupemon.def);
     printf("Acc: %d       Eva: %d\n", currentSupemon.acy, currentSupemon.evs);
@@ -190,22 +189,22 @@ int DispalyActionsCombat() {
 }
 
 
-int MoveCombat (Supemon Supedex) {
+int MoveCombat (Supemon *Supedex) {
     int choice =0;
     do {
     // Menu des attaques si l'utilisateur choisit 1 //les actions doivent être dynamique en fonction de ce qu'a le pokemon 
-        printf("\n1 - %s\n", Supedex.selfCapa[0].name);
-        printf("2 - %s\n", Supedex.selfCapa[1].name);
+        printf("\n1 - %s\n", Supedex->selfCapa[0].name);
+        printf("2 - %s\n", Supedex->selfCapa[1].name);
         printf("3 - Cancel\n");
         printf("\n1, 2 or 3 : ");
         scanf(" %c", &choice);
 
         switch (choice) {//duu coup doit être dynamique et ""Supemon" utilise "attaque""
             case 1:
-                printf("Your Supémon use %s !\n", Supedex.selfCapa[0].name);
+                printf("Your Supémon use %s !\n", Supedex->selfCapa[0].name);
                 break;
             case 2:
-                printf("Your Supémon use %s !\n", Supedex.selfCapa[1].name);
+                printf("Your Supémon use %s !\n", Supedex->selfCapa[1].name);
                 break;
             case 3:
                 return 3;
@@ -219,20 +218,20 @@ int MoveCombat (Supemon Supedex) {
 }
 
 // change supemon 
-int changeSupemon (Player mainUser) {
+int changeSupemon (Player *mainUser) {
     int choice =0;
 
     do
     {
     printf("+-----------------------------------+\n");
-    printf("| Your current Supémon is %s        |\n", mainUser.supemonList[mainUser.curSupemon].name);
+    printf("| Your current Supémon is %s        |\n", mainUser->supemonList[mainUser->curSupemon].name);
     printf("| Which Supémon do you want to use? |\n");
-    printf("|  1 - %s                           |\n", mainUser.supemonList[0].name);
-    printf("|  2 - %s                           |\n", mainUser.supemonList[1].name);
-    printf("|  3 - %s                           |\n", mainUser.supemonList[2].name);
-    printf("|  4 - %s                           |\n", mainUser.supemonList[3].name);
-    printf("|  5 - %s                           |\n", mainUser.supemonList[4].name);
-    printf("|  6 - %s                           |\n", mainUser.supemonList[5].name);
+    printf("|  1 - %s                           |\n", mainUser->supemonList[0].name);
+    printf("|  2 - %s                           |\n", mainUser->supemonList[1].name);
+    printf("|  3 - %s                           |\n", mainUser->supemonList[2].name);
+    printf("|  4 - %s                           |\n", mainUser->supemonList[3].name);
+    printf("|  5 - %s                           |\n", mainUser->supemonList[4].name);
+    printf("|  6 - %s                           |\n", mainUser->supemonList[5].name);
     printf("|  0 - Cancel                       |\n");
     printf("+-----------------------------------+\n");
     printf("\n1, 2, 3, 4, 5, 6 or 0: ");
@@ -369,6 +368,18 @@ int RunAwayFail () {
     printf("+--------------------------------------------------+\n");
 }
 
+
+//Loose
+int Loose () {
+    
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("| All of youur SUPEMON are K.O.        |\n");
+    printf("| you run to the SUPEMON CENTER        |\n");
+    printf("|                                      |\n");
+    printf("+--------------------------------------+\n");
+}
+
 // SHOP
 int ShopInterface () {
     int choice =0;
@@ -406,9 +417,9 @@ int buyingInterface() {
     
     printf("+--------------------------------+\n");
     printf("| What will you buy?             |\n");
-    printf("|  1 - Buy a Potion              |\n");
-    printf("|  2 - Buy a Super Potion        |\n");
-    printf("|  3 - Buy a Rare Candy          |\n");
+    printf("|  1 - Buy a Potion          100$|\n");
+    printf("|  2 - Buy a Super Potion    300$|\n");
+    printf("|  3 - Buy a Rare Candy      700$|\n");
     printf("|  0 or else to quit             |\n");
     printf("+--------------------------------+\n");
     printf("\n1, 2 or 3: ");
@@ -429,14 +440,14 @@ int buyingInterface() {
     }
 }
 
-int sellingInterface(Player mainUser) {
+int sellingInterface(Player *mainUser) {
     int choice =0;
     
     printf("+--------------------------------+\n");
     printf("| Your inventory :               |\n");
-    printf("| 1.Potion               %d items|\n", mainUser.objectList[0].number);
-    printf("| 2.Super Potion         %d items|\n", mainUser.objectList[1].number);
-    printf("| 3.Rare Candy           %d items|\n", mainUser.objectList[2].number);
+    printf("| 1.Potion               %d items|\n", mainUser->objectList[0].number);
+    printf("| 2.Super Potion         %d items|\n", mainUser->objectList[1].number);
+    printf("| 3.Rare Candy           %d items|\n", mainUser->objectList[2].number);
     printf("|  What do you want to sell      |\n");
     printf("|  1, 2 or 3 (0 or else to quit) |\n");
     printf("+--------------------------------+\n");
@@ -460,17 +471,17 @@ int sellingInterface(Player mainUser) {
 
 // SUPEMON CENTER
 
-int SupemonCenterInterface(Player mainUser) {
+int SupemonCenterInterface(Player *mainUser) {
     int choice =0;
     
     printf("+-------------------------------------+\n");
     printf("| Welcome to the Supémon Center       |\n");
-    printf("|  1 - %s                    HP: %d/%d|\n", mainUser.supemonList[0].name, mainUser.supemonList[0].HP, mainUser.supemonList[0].HP_max);
-    printf("|  2 - %s                    HP: %d/%d|\n", mainUser.supemonList[1].name, mainUser.supemonList[1].HP, mainUser.supemonList[1].HP_max);
-    printf("|  3 - %s                    HP: %d/%d|\n", mainUser.supemonList[2].name, mainUser.supemonList[2].HP, mainUser.supemonList[2].HP_max);
-    printf("|  4 - %s                    HP: %d/%d|\n", mainUser.supemonList[3].name, mainUser.supemonList[3].HP, mainUser.supemonList[3].HP_max);
-    printf("|  5 - %s                    HP: %d/%d|\n", mainUser.supemonList[4].name, mainUser.supemonList[4].HP, mainUser.supemonList[4].HP_max);
-    printf("|  6 - %s                    HP: %d/%d|\n", mainUser.supemonList[5].name, mainUser.supemonList[5].HP, mainUser.supemonList[5].HP_max);
+    printf("|  1 - %s                    HP: %d/%d|\n", mainUser->supemonList[0].name, mainUser->supemonList[0].HP, mainUser->supemonList[0].HP_max);
+    printf("|  2 - %s                    HP: %d/%d|\n", mainUser->supemonList[1].name, mainUser->supemonList[1].HP, mainUser->supemonList[1].HP_max);
+    printf("|  3 - %s                    HP: %d/%d|\n", mainUser->supemonList[2].name, mainUser->supemonList[2].HP, mainUser->supemonList[2].HP_max);
+    printf("|  4 - %s                    HP: %d/%d|\n", mainUser->supemonList[3].name, mainUser->supemonList[3].HP, mainUser->supemonList[3].HP_max);
+    printf("|  5 - %s                    HP: %d/%d|\n", mainUser->supemonList[4].name, mainUser->supemonList[4].HP, mainUser->supemonList[4].HP_max);
+    printf("|  6 - %s                    HP: %d/%d|\n", mainUser->supemonList[5].name, mainUser->supemonList[5].HP, mainUser->supemonList[5].HP_max);
     printf("|  Do you want to heal your Supémon ? |\n");
     printf("+-------------------------------------+\n");
     printf("\n yes(1) or no(0): ");
