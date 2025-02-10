@@ -1,0 +1,23 @@
+display.c : tout les affichages sont contenus dans ce fichier. 
+A l'interieur nous pouvons retrouver les différents affichages et choix, ils retournent le choix choisi par les utilisateurs. 
+certains peuvent prendre en parametre la structure joueur ou supémon.
+
+
+
+entity.c : entity.c permet de créer tout les types de structures; Les structures marchent toutes de la même façon.
+Supédex permet de lister les 3 types de supémon avec leurs différentes stats de début et une liste de moves.
+
+MainUser à une liste de Supémon.
+Il a aussi un int qui permet de donner le supémon qui est le supémon sélectionné, 
+un sac avec un item de chaque qui commence avec un nombre à 0 mais qui peut augmenter.
+
+le bookOfObjects répertorie les différents objets et capacity les capacités existantes !!SUJET A MODIFICATION
+
+
+
+Feature.C : Le fichier Feature.C regroupe les différentes fonctions qui vont faire des actions profondes au second plan.
+Exemple : les modifications de structures, sauvegardes, soin, augmentations de niveaux etc...
+
+
+
+main.c : le fichier main du projet dans lequel se déroule le code avec les différents appel de fonction et les gestion des réponses de ces mêmes fonction.
