@@ -25,7 +25,7 @@ typedef struct
     int acy;
     int acy_base;
     int speed;
-    capacities selfCapa [4];
+    capacities selfCapa [2];
 } Supemon;
 
 
@@ -33,7 +33,7 @@ typedef struct
 {
     char name [10];
     Supemon supemonList[6];
-    Supemon curSupemon;
+    int curSupemon;
     int Supcoins;
     Objects objectList [3];
 } Player;

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "header/entity.h"
 
-capacities ctList [5] = {
+/*capacities ctList [5] = {
     {
         .name = "Scratch",
         .target = 2,
@@ -36,7 +36,7 @@ capacities ctList [5] = {
     }
 
 
-};
+};*/
 
 Supemon Supedex[3] = {{
     .name = "Supmander",
@@ -53,7 +53,18 @@ Supemon Supedex[3] = {{
     .acy = 2,
     .acy_base = 2,
     .speed = 1,
-    .selfCapa = {0}, /* A FIX VITE*/},
+    .selfCapa = {{ 
+        .name = "Scratch",
+        .target = 2,
+        .howMuch= 3,
+        .effect = 1
+   },
+    { .name = "grawl",
+        .target = 1,
+        .howMuch = 1,
+        .effect = 2
+    }
+    }},
     {
     .name = "Supasaur",
     .level = 1,
@@ -116,10 +127,13 @@ Objects BookOfObject [3] = {{
 
 Player mainUser = {
     .name = "",
-    .supemonList = {{0}},
-    .curSupemon = {0},
+    .supemonList = {{0/*Same with malloc ?*/}},
+    .curSupemon = 1,
     .Supcoins = 0,
-    .objectList = {{1}}
+    .objectList = {{.name = "Potion", .cost = 100, .power = 5, .effect = 1, .number = 0},
+                    {.name = "Super Potion", .cost = 300, .power = 10, .effect = 1, .number = 0},
+                    {.name = "Rare candy", .cost = 700, .power = 1, .effect = 2, .number = 0}
+    }
 };
 
 

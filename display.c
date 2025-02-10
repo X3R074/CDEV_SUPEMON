@@ -7,6 +7,39 @@
 extern Player mainUser;
 extern Supemon Supedex;
 
+int DisplayMainTitle (){
+    int choice =0;
+    do
+    {
+    
+    printf("+-----------------------------------+\n");
+    printf("| Welcome to Supemon World          |\n");
+    printf("|  1 - New Game                     |\n");
+    printf("|  2 - Load Game                    |\n");
+    printf("|  3 - Leave the Game               |\n");
+    printf("+-----------------------------------+\n");
+    printf("\n1, 2 or 3: ");
+    scanf(" %d", &choice);
+    switch (choice){
+    case 1:
+        return 1;
+        break;
+    case 2:
+        return 2;
+        break;
+    case 3:
+        return 3;
+        break;
+    default:
+        choice = 0;
+        printf("Please enter a valid number\n");
+    }
+    } while (choice == 0);
+}
+
+
+
+
 int DisplayStarter() {
     int choice=0;
     printf("Hello %s\n", mainUser.name);
@@ -104,11 +137,13 @@ void displayCombatStats() {
     printf("Atk: %d        Def: %d\n");
     printf("Acc: %d        Eva: %d\n");
     printf("----------------------------\n");
+
+    Supemon currentSupemon = mainUser.supemonList[mainUser.curSupemon];
     
-    printf("%s (%s)\n", mainUser.curSupemon.name, mainUser.name);
-    printf("HP: %d/%d     Lvl: %d\n", mainUser.curSupemon.HP, mainUser.curSupemon.HP_max, mainUser.curSupemon.level);
-    printf("Atk: %d        Def: %d\n", mainUser.curSupemon.atk, mainUser.curSupemon.def);
-    printf("Acc: %d       Eva: %d\n", mainUser.curSupemon.acy, mainUser.curSupemon.evs);
+    printf("%s (%s)\n", currentSupemon.name, mainUser.name);
+    printf("HP: %d/%d     Lvl: %d\n", currentSupemon.HP, currentSupemon.HP_max, currentSupemon.level);
+    printf("Atk: %d        Def: %d\n", currentSupemon.atk, currentSupemon.def);
+    printf("Acc: %d       Eva: %d\n", currentSupemon.acy, currentSupemon.evs);
     printf("----------------------------\n\n");}
 
 

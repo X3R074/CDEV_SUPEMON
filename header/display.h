@@ -1,7 +1,7 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-
+int DisplayMainMenu();
 int DisplayStarter();
 int DisplayAdventure();
 int DisplayCombatStats();
