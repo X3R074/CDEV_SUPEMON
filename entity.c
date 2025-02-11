@@ -129,7 +129,7 @@ Objects BookOfObject [3] = {{
 
 Player mainUser = {
     .name = "",
-    .supemonList = {{0/*Same with malloc ?*/}},
+    .supemonList = malloc(sizeof(Supemon) * 6),
     .curSupemon = 1,
     .Supcoins = 0,
     .objectList = {{.name = "Potion", .cost = 100, .power = 5, .effect = 1, .number = 0},

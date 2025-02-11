@@ -23,12 +23,13 @@
 
 int main() {
     Player mainUser;
+    Supemon Supedex[3];
     int rep = DisplayMainTitle();
     if (rep == 1 ) {
-        initJoueur(Player *mainUser);
-        int Supchoice = DisplayStarter();
+        initJoueur(&mainUser);
+        int Supchoice = DisplayStarter(&mainUser);
         if (Supchoice == 1) {
-            mainUser->supemonList[0] = *Supedex[0]; //gérer comment on ajoute un supemon
+            mainUser.supemonList[0] = Supedex[0]; //gérer comment on ajoute un supemon
         }
         else if (Supchoice == 2) {
             mainUser.supemonList[0] = Supedex[1];
@@ -40,18 +41,31 @@ int main() {
         
     }
     else if (rep == 2) {
-        Load();
+        Load(&mainUser);
     }
     else {
         return 0;
+        free(mainUser.supemonList);
     }
 
-    DisplayAdventure();
+    int MainMenu=DisplayAdventure();
+    if (MainMenu == 1) {
+        //nature
+    }
+    else if (MainMenu == 2) {
+        //shop
+    }
+    else if (MainMenu == 3) {
+        //supemon center
+    }
+    else if (MainMenu == 4) {
+        //leave the game
+    }
 
 
 
 
-
+    free(mainUser.supemonList);
     return 0;
 }
 
