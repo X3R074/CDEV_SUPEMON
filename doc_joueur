@@ -1,0 +1,11 @@
+Comment Jouer à supémon.
+
+étape I compiler le projet. 
+
+Sous LINUX allez dans le fichier CDEV_SUPEMON et executez la commande si dessous (apres avoir vérifié que gcc etait installé)
+gcc main.c display.c entity.c feature.c
+ensuite tappez ./a.out
+
+étape II Jouer au jeu. 
+
+Vous arrivez sur un menu ou vous pouver charger une ancienne partie ou alors commencer un nouvelle partie. 

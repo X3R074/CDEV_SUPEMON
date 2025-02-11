@@ -1,6 +1,24 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+
+
+typedef struct  {
+    char name [15];
+    int cost;
+    int power;
+    int effect; //1 vie 2 experience ?
+    int number;
+} Objects ;
+
+
+typedef struct {
+    char name [10];
+    int target; //1 me 2 enemy
+    int howMuch;
+    int effect; //1 damage, 2 attaque, 3 defense, 4 evasion, 5 accuracy, 6 HP; 
+} capacities;
+
 typedef struct  
 {
     char name[10];
@@ -17,11 +35,11 @@ typedef struct
     int acy;
     int acy_base;
     int speed;
-    //list of move
+    capacities selfCapa [2];
 } Supemon;
 
 
-typedef struct 
+typedef struct
 {
     char name [10];
     Supemon supemonList[6];
@@ -29,24 +47,5 @@ typedef struct
     int Supcoins;
     Objects objectList [3];
 } Player;
-
-
-typedef struct {
-    char name [15];
-    int cost;
-    int power;
-    int effect; //1 vie 2 experience ?
-    int number;
-} Objects;
-
-
-typedef struct {
-    char name [10];
-    int target; //1 me 2 enemy
-    int howMuch;
-    int effect; //1 damage, 2 attaque, 3 defense, 4 evasion, 5 accuracy, 6 HP; 
-} capacities;
-
-
 
 #endif
