@@ -1,6 +1,9 @@
 #ifndef FEATURE_H
 #define FEATURE_H
 
+#include "entity.h"
+
+
 void initJoueur (Player *mainUser);
 void Save (Player *mainUser);
 void Load (Player *mainUser);

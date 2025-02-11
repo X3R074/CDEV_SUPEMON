@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "header/feature.h"
-#include "header/entity.h"
 #include <time.h>
 #include <math.h>
+#include "feature.h"
+#include "entity.h"
 
 //extern Player mainUser;
 //extern Supemon Supedex;
@@ -86,10 +86,10 @@ void Sell (int itemSelected, Player *mainUser){
 
 
 
-void RandomSupémon (Supemon *Supedex[]){
+void RandomSupémon (Supemon Supedex[]){
     srand(time(NULL));
     int random = rand() % 3;
-    Supemon Enemy = *Supedex[random];
+    Supemon Enemy = Supedex[random];
 }
 
 void SupemonCenter (Player *mainUser){
@@ -124,7 +124,7 @@ void LevelUp (Player *mainUser){
 int capacityUp (int value){
     float valuetmp = 0;
     valuetmp = value*1.3;
-    if (value==valuetmp)//si c'est un entier !!!! a modifier
+    if (valuetmp == floor(valuetmp))
   {
     srand(time(NULL));
     int random = rand() % 2;

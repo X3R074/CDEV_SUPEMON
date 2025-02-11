@@ -1,6 +1,9 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+#include "entity.h"
+
+
 int DisplayMainTitle();
 int DisplayStarter(Player *mainUser);
 int DisplayAdventure();

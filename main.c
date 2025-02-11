@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "header/display.h"
-#include "header/entity.h"
-#include "header/feature.h"
+#include "display.h"
+#include "entity.h"
+#include "feature.h"
 
 
 
@@ -69,3 +69,6 @@ int main() {
     return 0;
 }
 
+
+
+//cd "/home/gwen/Documents/SUPINFOB1/CDEV/projet/CDEV_SUPEMON" ; if ($?) { gcc main.c display/display.c structures/structures.c features/features.c -o main } ; if ($?) { .\main }

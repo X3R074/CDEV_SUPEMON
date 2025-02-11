@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "header/entity.h"
-#include "header/display.h"
+#include "entity.h"
+#include "display.h"
 
 
 
@@ -197,7 +197,7 @@ int MoveCombat (Supemon *Supedex) {
         printf("2 - %s\n", Supedex->selfCapa[1].name);
         printf("3 - Cancel\n");
         printf("\n1, 2 or 3 : ");
-        scanf(" %c", &choice);
+        scanf(" %d", &choice);
 
         switch (choice) {//duu coup doit être dynamique et ""Supemon" utilise "attaque""
             case 1:

@@ -1,11 +1,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "header/entity.h"
 
-void initJoueur (Player mainUser){
+#include "entity.h"
 
-/*capacities ctList [5] = {
+
+
+capacities ctList [5] = {
     {
         .name = "Scratch",
         .target = 2,
@@ -36,16 +37,14 @@ void initJoueur (Player mainUser){
         .howMuch = 1,
         .effect = 3
     }
-
-
-};*/
+};
 
 Supemon Supedex[3] = {{
     .name = "Supmander",
-    .level = 1,
     .experience = 0,
     .HP = 10,
-    .HP_max = 10,
+    .level = 1,
+    .experience = 0,
     .atk = 1,
     .atk_base =1,
     .def =1,
@@ -129,7 +128,7 @@ Objects BookOfObject [3] = {{
 
 Player mainUser = {
     .name = "",
-    .supemonList = malloc(sizeof(Supemon) * 6),
+    .supemonList = {0},
     .curSupemon = 1,
     .Supcoins = 0,
     .objectList = {{.name = "Potion", .cost = 100, .power = 5, .effect = 1, .number = 0},
@@ -145,4 +144,3 @@ Player mainUser = {
 
 
 
-}
